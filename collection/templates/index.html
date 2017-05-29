@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    <p>{{ number }}</p>
+    <p>{% if number %}Number exists!{% endif %}</p>
+{% endblock content %}
