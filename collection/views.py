@@ -22,13 +22,13 @@ def edit_thing(request, slug):
     thing = Thing.objects.get(slug=slug)
     form_class = ThingForm
 
-    if request.method == 'Post':
+    if request.method == 'POST':
         form = form_class(data=request.POST, instance=thing)
         if form.is_valid():
             form.save()
             return redirect('thing_detail', slug=thing.slug)
     else:
-        form = form_class
+        form = form_class(instance=thing)
     
     return render(request, 'things/edit_thing.html', {
         'thing': thing,
