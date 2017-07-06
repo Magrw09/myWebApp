@@ -1,4 +1,4 @@
-from hellowebappsettings import *
+from hellowebapp.settings import *
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
